@@ -1,0 +1,27 @@
+Desigin Layout for Application : 
+    1. Header
+    2. Content Between Header and Footer
+    3. Footer
+
+Layout Folder
+Header , Footer , Content
+
+Components: Components used in the Content
+
+AI Tools for Auto Complete : 
+1. Co pilot
+2. Tabnine
+
+
+Create a movie Application
+    Pages: 
+    HomePage : --> Should display  all the movies
+    Add Movie : --> Should have a form where you can add a new movie
+    Edit Movie : --> Should have a perfiled form where you can edit the movie
+    Dashboard : --> seperate dashboard from other components
+Function :CREATE READ UPDATE DELETE 
+List users - '/users'--> List All the Users
+Create User - '/create-user --> Create a new user
+Edit User - '/edit-user/:id' --> Edit a user with the specified id    
+Profile - '/profile/:id' --> Profile a user with the specified id   
+edit-Profile - '/edit-profile/:id' --> Edit a user with the specified id
