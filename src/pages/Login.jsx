@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 
 const email = "devdanny28@proton.me";
-const password = "Innova280899";
+const password = "  ";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -35,6 +35,7 @@ const Login = () => {
           password: password,
         },
       });
+      <Navigate to={"/counter"} replace />;
     } else {
       alert("Invalid UserName or Password");
     }
@@ -45,7 +46,7 @@ const Login = () => {
   }
   const handleLogOut = () => {
     dispatch({ type: "user_logut" });
-  };
+   };
 
   return (
     <>

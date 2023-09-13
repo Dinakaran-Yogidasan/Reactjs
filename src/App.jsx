@@ -32,8 +32,9 @@ import Login from "./pages/Login";
 import Recipe from "./FoodApp/Recipe";
 import store from "./store/store";
 import Admin from "./pages/Admin";
-import ProductedRoute from "./ProductedRoute";
-import ProductedPage from "./ProductedRoute";
+import ProductedRoute from "./ProductedPage";
+import ProductedPage from "./ProductedPage";
+import ProtectedPage from "./ProductedPage";
 import("preline");
 // import Pricing from "./Components/Pricing/Pricing";
 
@@ -196,14 +197,15 @@ function App() {
       {/* </Routes> */}
       <Provider store={store}>
         <Routes>
-          <Route index path="/" element={<Admin />} />
-          <Route index path="/login" element={<Login />} />
-          <Route
-            path="/login"
-            element={<ProductedPage element={<Login />} />}
-          />
-
-          <Route path="/counter" element={<Counter />} />
+          {/* Public Pages */}
+          <Route index element={<Admin />} />
+          <Route path="login" element={<Login />} />
+          {/* Protected/Private for user of the application */}
+          <Route path="counter" element={<Counter />} />
+          {/* <Route
+            path="counter"
+            element={<ProtectedPage element={<Counter />} />}
+          />  */}
           <Route path="/storage" element={<Storage />} />
         </Routes>
       </Provider>
