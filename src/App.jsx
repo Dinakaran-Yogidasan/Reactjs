@@ -35,6 +35,9 @@ import Admin from "./pages/Admin";
 import ProductedRoute from "./ProductedPage";
 import ProductedPage from "./ProductedPage";
 import ProtectedPage from "./ProductedPage";
+import CounterApp from "./Components/Basic/CounterApp";
+import Task from "./Components/Basic/Task";
+import Interview from "./Components/Basic/Interview";
 import("preline");
 // import Pricing from "./Components/Pricing/Pricing";
 
@@ -195,20 +198,25 @@ function App() {
         {/* <Flag/> */}
       </>
       {/* </Routes> */}
-      <Provider store={store}>
-        <Routes>
-          {/* Public Pages */}
-          <Route index element={<Admin />} />
-          <Route path="login" element={<Login />} />
-          {/* Protected/Private for user of the application */}
-          <Route path="counter" element={<Counter />} />
-          {/* <Route
+      {/* <Provider store={store}>
+        <Routes> */}
+      {/* Public Pages */}
+      {/* <Route index element={<Admin />} />
+          <Route path="login" element={<Login />} /> */}
+      {/* Protected/Private for user of the application */}
+      {/* <Route path="counter" element={<Counter />} /> */}
+      {/* <Route
             path="counter"
             element={<ProtectedPage element={<Counter />} />}
           />  */}
-          <Route path="/storage" element={<Storage />} />
+      {/* <Route path="/storage" element={<Storage />} />
+          <Route path="/recipe" element={<Recipe />} />
         </Routes>
-      </Provider>
+      </Provider> */}
+      {/* <CounterApp />
+      <Form/> */}
+      <Flag />
+      <Interview />
     </>
   );
 }

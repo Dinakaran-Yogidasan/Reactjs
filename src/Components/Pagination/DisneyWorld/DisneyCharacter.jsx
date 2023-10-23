@@ -11,7 +11,7 @@ const DisneyCharacter = () => {
   const fetchCharacters = async () => {
     try {
       const response = await fetch(
-        `https://api.disneyapi.dev/character?page=${page}&pageSize=5`
+        `https://api.twitter.com/2/users/2244994945/tweets?tweet.fields=created_at&max_results=100&start_time=2019-01-01T17:00:00Z&end_time=2020-12-12T01:00:00Z`
       );
       const { data } = await response.json();
       setCharacter(data);

@@ -1,0 +1,54 @@
+ReactJS:
+VARIABLES: LET & CONST
+// Difference between LET CONST VAR
+// Scope, Redeclaration,Reassignment and Initialization
+
+//SCOPE: Where the variable is available for use (Global function or Local and blocked scoped variable)
+
+// VAR is globally and function scoped.
+// LET and CONST is blocked scoped.
+
+//REDECLARATION: Recreating the variables.
+//VAR can be redeclared
+//LET and CONST cannot be redeclared.
+// const good = "good"; //Declaration
+// const good = "Morning"; //ReDeclaration
+
+//REASSIGNMENT: Assigning a new value to an already created variable.
+//Reassignment is possible for LET and VAR
+//Reassignment is  not possible for CONST
+
+// var name = "Dinakaran";
+// name = "Danny";
+// console.log(name);
+
+//INITIALIZATION: Means to assigin an initial value to a variable.
+//VAR and LET are initialized to undefined
+//CONST must be initialized.
+
+ARRAY METHOD:
+<----MAP--->
+const numbers = [1, 2, 3, 4, 5];
+const doubledNumbers = numbers.map((num) => num * 2);
+
+console.log(doubledNumbers); // Output: [2, 4, 6, 8, 10]
+<---FILTER--->
+const numbers = [1, 2, 3, 4, 5];
+const evenNumbers = numbers.filter((num) => num % 2 === 0);
+
+console.log(evenNumbers); // Output: [2, 4]
+
+<---REDUCER---->
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((acc, num) => acc + num, 0);
+
+console.log(sum); // Output: 15
+
+
+const sortRoles = (rolesList) =>{
+  if(rolesList.length === 1) return rolesList;
+  const sortedRoles = rolesList.sort((a,b) => a.rolePriority - b.rolePriority)
+  return sortedRoles;
+};
+
+

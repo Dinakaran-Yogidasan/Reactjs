@@ -1,9 +1,9 @@
-import { useState } from "react";
+import {  useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 
 const email = "devdanny28@proton.me";
-const password = "  ";
+const password = "Dannydina28";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -46,7 +46,7 @@ const Login = () => {
   }
   const handleLogOut = () => {
     dispatch({ type: "user_logut" });
-   };
+  };
 
   return (
     <>
