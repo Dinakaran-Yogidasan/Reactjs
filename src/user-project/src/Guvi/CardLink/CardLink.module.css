@@ -1,0 +1,9 @@
+.container {
+    background-color: blue;
+    font-style: italic;
+}
+.cardValue {
+    background-color: aquamarine;
+    font-size: medium;
+    align-items: center;
+}
