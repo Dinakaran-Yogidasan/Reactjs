@@ -1,0 +1,44 @@
+{
+  "movie": [
+    {
+      "title": "jailer",
+      "year": "2023",
+      "images": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
+      "category": "Action",
+      "trailer": "5PSNL1qE6VY",
+      "id": 1
+    },
+    {
+      "title": "Javan",
+      "year": "2021",
+      "images": "https://www.livemint.com/lm-img/img/2023/08/20/1600x900/garena_free_fire_max_1688877791610_1692502536312.jpg",
+      "category": "Action",
+      "trailer": "5PSNL1qE6VY",
+      "id": 2
+    },
+    {
+      "title": "Leo",
+      "year": "2023",
+      "images": "https://www.livemint.com/lm-img/img/2023/07/31/600x338/Garena_Free_Fire_Max_1686545079791_1690773188483.webp",
+      "category": "Romance",
+      "trailer": "5PSNL1qE6VY",
+      "id": 3
+    },
+    {
+      "title": "Wolf",
+      "year": "2023",
+      "images": "https://www.livemint.com/lm-img/img/2023/07/31/600x338/Garena_Free_Fire_Max_1686545079791_1690773188483.webp",
+      "category": "Action",
+      "trailer": "5PSNL1qE6VY",
+      "id": 4
+    },
+    {
+      "title": "s",
+      "year": "2090",
+      "images": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjEyOTYyMzUxNl5BMl5BanBnXkFtZTcwNTg0MTUzNA@@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
+      "category": "Romance",
+      "trailer": "asdfdds",
+      "id": 8
+    }
+  ]
+}

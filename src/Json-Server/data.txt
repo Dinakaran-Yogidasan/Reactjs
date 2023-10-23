@@ -1,0 +1,62 @@
+{
+//   "SignIn": [
+//     {
+//       "username": "Dinakaran",
+//       "password": "DevDanny28@"
+//     },
+//     {
+//       "id": 1,
+//       "username": "Fred",
+//       "password": "Flintstone"
+//     }
+//   ],
+//   "SignUp": [
+//     {
+//       "username": "Dinakaran",
+//       "password": "DevDanny28@"
+//     }
+//   ],
+//   "product": [
+//     {
+//       "id": 1,
+//       "title": "Product 1",
+//       "category": "electronics",
+//       "price": 4000,
+//       "description": "This is the description about product 1"
+//     },
+//     {
+//       "id": 2,
+//       "title": "Product 2",
+//       "category": "electronics",
+//       "price": 2000,
+//       "description": "This is the description about product 2"
+//     },
+//     {
+//       "id": 3,
+//       "title": "Product 3",
+//       "category": "electronics",
+//       "price": 5000,
+//       "description": "This is the description about product 3"
+//     }
+//   ],
+//   "reviews": [
+//     {
+//       "id": 1,
+//       "rating": 4,
+//       "comment": "Review 1 for Product id 1",
+//       "productId": 1
+//     },
+//     {
+//       "id": 2,
+//       "rating": 1,
+//       "comment": "Review 1 for Product id 1",
+//       "productId": 1
+//     },
+//     {
+//       "id": 1,
+//       "rating": 3,
+//       "comment": "Review 3 for Product id 1",
+//       "productId": 1
+//     }
+//   ]
+// }
