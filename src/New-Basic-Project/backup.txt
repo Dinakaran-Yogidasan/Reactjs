@@ -1,0 +1,636 @@
+ <Router>
+        <div className="App">
+          <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+            <div className="container">
+              <Link className="navbar-brand" to={"/sign-in"}>
+                positronX
+              </Link>
+              <div
+                className="collapse navbar-collapse"
+                id="navbarTogglerDemo02"
+              >
+                <ul className="navbar-nav ml-auto">
+                  <li className="nav-item">
+                    <Link className="nav-link" to={"/sign-in"}>
+                      Login
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to={"/sign-up"}>
+                      Sign up
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div className="auth-wrapper">
+            <div className="auth-inner">
+              <Routes>
+                <Route exact path="/" element={<SignIn />} />
+                <Route path="/sign-in" element={<SignUp />} />
+                {/* <Route path="/sign-up" element={<SignUp />} /> */}
+              </Routes>
+            </div>
+          </div>
+        </div>
+      </Router>
+
+
+-----------------AUTH O--------------
+
+import { useState } from "react";
+import "./App.css";
+import Counter from "./Component/ReactProject/Counter";
+import SearchFilter from "./Component/ReactProject/SearchFilter";
+import Forms from "./Component/ReactProject/Forms";
+import Quiz from "./Component/ReactProject/Quiz";
+import LoginButton from "./Component/ReactProject/Auth0/LoginButton";
+import LogoutButton from "./Component/ReactProject/Auth0/LogoutButton";
+import Profile from "./Component/ReactProject/Auth0/Profile";
+import { useAuth0 } from "@auth0/auth0-react";
+
+function App() {
+  const { isLoading } = useAuth0();
+  if (isLoading) {
+    return <i>Loading....</i>;
+  }
+  return (
+    <>
+      {/* <Counter />
+      <br />
+      <SearchFilter/> */}
+      {/* <Forms/> */}
+      {/* <Quiz/> */}
+      <LoginButton />
+      <LogoutButton />
+      <Profile />
+    </>
+  );
+}
+
+export default App;
+
+
+
+// import { useEffect, useState } from "react";
+// import "./App.css";
+// // import Counter from "./Component/ReactProject/Counter";
+// import SearchFilter from "./Component/ReactProject/SearchFilter";
+// import Forms from "./Component/ReactProject/Forms";
+// import Quiz from "./Component/ReactProject/Quiz";
+// import TodoWraper from "./Component/ReactProject/TodoList/TodoWraper";
+// import Dashboard from "./Component/Dashboard/Dashboard";
+// import SignIn from "./Component/Dashboard/SignIn";
+// import SignUp from "./Component/Dashboard/SignUp";
+// import GetApi from "./Component/Dashboard/GetApi";
+// import { Route, Routes } from "react-router-dom";
+// import "react-toastify/dist/ReactToastify.css";
+// import BasicTable from "./Component/Dashboard/BasicTable";
+// import AddProduct from "./Component/Dashboard/AddProduct";
+// import Employee from "./Component/Employee/Employee";
+// import EmpCreate from "./Component/Employee/EmpCreate";
+// import { EmpDetails } from "./Component/Employee/EmpDetails";
+// import EmpEdit from "./Component/Employee/EmpEdit";
+// import ExpenseItem from "./Component/ExpensesTracker/ExpenseItem";
+// import RenderingList from "./Component/BasicOfReact/RenderingList";
+// import Count from "./Component/BasicOfReact/Count";
+// import ProductTable from "./Component/BasicOfReact/ProductTable";
+// import Gallery from "./Component/BasicOfReact/Gallery";
+// import ArrayMethods from "./Component/BasicOfReact/ArrayMethods";
+// import AddTodo from "./Component/BasicOfReact/TodoList/AddTodo";
+// import TaskList from "./Component/BasicOfReact/TodoList/TaskList";
+
+// // import LoginButton from "./Component/ReactProject/Auth0/LoginButton";
+// // import LogoutButton from "./Component/ReactProject/Auth0/LogoutButton";
+// // import Profile from "./Component/ReactProject/Auth0/Profile";
+// // import { useAuth0 } from "@auth0/auth0-react";
+
+// // let nextId = 3;
+// // const initialTodos = [
+// //   { id: 0, title: "Buy milk", done: true },
+// //   { id: 1, title: "Eat tacos", done: false },
+// //   { id: 2, title: "Brew tea", done: false },
+// // ];
+
+// function App() {
+//   // const [todos, setTodos] = useState(initialTodos);
+
+//   useEffect(() => {
+//     console.log("Initial Render");
+
+//     return () => {
+//       console.log("First Render");
+//       console.log("Second Render");
+//     };
+//   }, []);
+
+//   // function handleAddTodo(title) {
+//   //   setTodos([
+//   //     ...todos,
+//   //     {
+//   //       id: nextId + 1,
+//   //       title: title,
+//   //       done: false,
+//   //     },
+//   //   ]);
+//   // }
+
+//   // function handleChangeTodo(nextTodo) {
+//   //   setTodos(
+//   //     todos.map((t) => {
+//   //       if (t.id === nextTodo.id) {
+//   //         return nextTodo;
+//   //       } else {
+//   //         return t;
+//   //       }
+//   //     })
+//   //   );
+//   // }
+
+//   // function handleDeleteTodo(todoId) {
+//   //   setTodos(todos.filter((t) => t.id !== todoId));
+//   // }
+//   // const { isLoading } = useAuth0();
+//   // if (isLoading) {
+//   //   return <i>Loading....</i>;
+//   // }
+
+//   // const [count, setCount] = useState(0);
+//   // const handleClick = () => {
+//   //   setCount((preCount) => preCount + 1);
+//   // };
+
+//   // const cups = [];
+//   // for (let index = 0; index < 12; index++) {
+//   //   cups.push(index )
+//   //   console.log(cups);
+//   // }
+
+//   return (
+//     <>
+//       {/* <AddTodo handleAddTodo={handleAddTodo} />
+//       <TaskList
+//         todos={todos}
+//         handleChangeTodo={handleChangeTodo}
+//         handleDeleteTodo={handleDeleteTodo}
+//       /> */}
+//       {/* <ArrayMethods/> */}
+//       {/* <Gallery /> */}
+//       {/* <RenderingList />
+
+//       <Count handleClick={handleClick} count={count}/> */}
+
+//       {/* <Count handleClick={handleClick} count={count} /> */}
+
+//       {/* <ProductTable/> */}
+
+//       {/* <Routes>
+//         <Route index element={<ExpenseItem />} />
+//         <Route path="/" element={<SignIn />} />
+//         <Route path="/signUp" element={<SignUp />} />
+//         <Route path="/dashboard" element={<Dashboard />} />
+//         <Route path="/table" element={<BasicTable />} />
+//         <Route path="/addProduct" element={<AddProduct />} />
+//         <Route path="/employee" element={<Employee />} />
+//         <Route path="/employee/create" element={<EmpCreate />} />
+//         <Route path="/employee/detail/:empid" element={<EmpDetails />} />
+//         <Route path="/employee/edit/:empid" element={<EmpEdit employees />} />
+//       </Routes> */}
+//       {/* <Counter />
+//       <br />
+//       <SearchFilter/> */}
+//       {/* <Forms/> */}
+//       {/* <Quiz/> */}
+//       {/* <LoginButton />
+//       <LogoutButton />
+//       <Profile /> */}
+//       {/* <TodoWraper/> */}
+//       {/* <Dashboard/> */}
+//       {/* <SignIn />
+//       <SignUp /> */}
+//       {/* <GetApi/> */}
+//     </>
+//   );
+// }
+
+// export default App;
+
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+
+const App = () => {
+  const [first, setfirst] = useState("Dinakaran");
+
+  // setfirst("kings");
+  // Error: Too many re-renders. React limits the number of renders to prevent an infinite loop.
+
+  // first("first");
+  // first is not a function
+
+  // setfirst(first)
+  // Error: Too many re-renders. React limits the number of renders to prevent an infinite loop.
+
+  const [data, setData] = useState([]);
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    setfirst("Danny");
+    console.log("First");
+
+    // setfirst("Dev");
+    // console.log("Second");
+
+    console.log(first);
+    console.log("First Render");
+  });
+  useEffect(() => {
+    fetchPosts();
+  }, []);
+  const fetchPosts = async () => {
+    try {
+      const response = await axios.get(
+        `https://jsonplaceholder.typicode.com/users?q=${search}`
+      );
+      setData(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetchPosts();
+  };
+
+  // If its empty and no dependency is present means (Leads to infinite looping.)
+
+  return (
+    <div>
+      <h1>{first}</h1>
+      <input type="text" onChange={(e) => setSearch(e.target.value)} />
+      <button onClick={handleSubmit}>Search</button>
+      <h2>
+        {data.map((item) => (
+          <ul key={item.id}>
+            <li>{item.name}</li>
+            <span>{item.username}</span>
+          </ul>
+        ))}
+      </h2>
+    </div>
+  );
+};
+
+export default App;
+
+
+
+import React, { useEffect, useState } from "react";
+
+const App = () => {
+  const [count, setCount] = useState(0);
+  const [time, setTime] = useState(0);
+  const [othercount, setOtherCount] = useState(5);
+  // useEffect(() => {
+  //   console.log("Mounting");
+  //   document.title = `${othercount}Counter`;
+  //   console.log("Mounting", othercount);
+
+  //   document.title = `${count}Counter`;
+  //   console.log("Mounting", count);
+
+  //   console.log(othercount);
+  // }, [othercount, count]);
+
+  useEffect(() => {
+    console.log("Run the useEffect", count);
+    return () => {
+      console.log("Clean up", count);
+    };
+  }, [count]);
+
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     setTime(time + 1);
+  //   }, 1000);
+  //   console.log(time);
+  // });
+  return (
+    <div>
+      <h1>{time} in seconds</h1>
+      <h1>Counter: {count}</h1>
+      <button onClick={() => setCount((preCount) => preCount + 1)}>
+        Increase
+      </button>
+      <h1>Increase By {othercount}</h1>
+      <button onClick={() => setOtherCount((preCount) => preCount + 5)}>
+        Increase
+      </button>
+    </div>
+  );
+};
+
+export default App;
+
+/** UseStae example: For counter and get the input value
+ * const [count, setCount] = useState(0);
+  const [name, setName] = useState("");
+  console.log(count);
+  console.log(name);
+  const increase = () => {
+    setCount((preCount) => preCount + 1);
+  };
+  return (
+    <div>
+      <input type="text" onChange={(e) => setName(e.target.value)} />
+      <h1>
+        {name}
+        has the Counter : {count}
+      </h1>
+      <button onClick={increase}>Increase </button>
+    </div>
+  );
+ */
+
+/** Usestate with one single object and holding all data
+   * const [details, setDetails] = useState({
+    count: 0,
+    name: "",
+  });
+  const increase = () => {
+    setDetails((pre) => ({
+      ...pre,
+      count: pre.count + 1,
+    }));
+  };
+
+  const handleChange = (e) => {
+    setDetails({
+      ...details,
+      [e.target.name]: e.target.value,
+    });
+  };
+  console.log(details);
+  return (
+    <div>
+      <input
+        type="text"
+        onChange={handleChange}
+        value={details.name}
+        name="name"
+      />
+      <h1>
+        {details.name}
+        has the Counter : {details.count}
+      </h1>
+      <button onClick={increase}>Increase </button>
+    </div>
+  );
+   */
+/**
+ * useEffect : useEffect(callback,dependencies)
+ * In the callBack (is to Perform side effect logic)
+ * Array for variable ([]).
+ * callBack ---> what to run
+ * dependencies ---> when to run
+ * Variation of useEffect:
+ * 1.useEffect without dependencies --> its runs with first render and also runs on any thing changes
+ * 2.useEffect with empty array --> it runs on the first render
+ * 3.useEffect with variables--> it runs on first render and runs with that variable change
+ *
+  useEffect(() => {
+    console.log("Run the useEffect", count);
+    return () => {
+      console.log("Clean up", count);
+    };
+  }, [count]); 
+  output : Runs the useEffect 0
+  Clean up 0
+  Run the useEffect 1
+  clean up 1
+  Run the useEffect 2
+ */
+
+import React, { createContext } from "react";
+import MainComponent from "./Component/MainComponent";
+export const LoginContext = createContext();
+const App = () => {
+  return (
+    <div>
+      <LoginContext.Provider value={true}>
+        <h1>UseContext</h1>
+        <MainComponent />
+      </LoginContext.Provider>
+    </div>
+  );
+};
+
+export default App;
+
+
+import React, { useEffect, useRef, useState } from "react";
+
+const App = () => {
+  const [input, setInput] = useState("");
+  const inputCount = useRef(0);
+  console.log(inputCount);
+  const handleClick = () => {
+    console.log("Function will runs", inputCount.current);
+    inputCount.current.style.width = "400px";
+    inputCount.current.focus();
+  };
+
+  return (
+    <div>
+      <h1>App</h1>
+      <input type="text" ref={inputCount} />
+      <button onClick={handleClick}>Click Me</button>
+    </div>
+  );
+};
+
+export default App;
+
+
+
+// import React, { useReducer, useState } from "react";
+
+// const initialState = {
+//   count: 0,
+// };
+
+// const reducer = (state, action) => {
+//   switch (action.type) {
+//     case "INCREASE":
+//       return { ...state, count: state.count + 1 };
+//     case "DECREASE":
+//       return { ...state, count: state.count - 1 };
+//     default:
+//       return state;
+//   }
+// };
+
+// const App = () => {
+//   const [count, setCount] = useState(0);
+
+//   const [state, dispatch] = useReducer(reducer, initialState);
+//   return (
+//     <div>
+//       <h1>Counter : {count}</h1>
+//       <button onClick={() => setCount((pre) => pre + 1)}>Increase</button>
+//       <button onClick={() => setCount((pre) => pre - 1)}>Decrease</button>
+
+//       <h1>Counter : {state.count}</h1>
+
+//       <button onClick={() => dispatch({ type: "INCREASE" })}>INCREASE</button>
+//       <button onClick={() => dispatch({ type: "DECREASE" })}>DECREASE</button>
+//     </div>
+//   );
+// };
+
+// export default App;
+
+import React, { useMemo, useState } from "react";
+
+const App = () => {
+  const [number, setNumber] = useState(0);
+  const [dark, setDark] = useState(false);
+
+  const cssStyle = {
+    backgroundColor: dark ? "black" : "white",
+    color: dark ? "white" : "Black",
+  };
+
+  return (
+    <div style={cssStyle}>
+      <h1>useMemo {number}</h1>
+      <input onChange={(e) => setNumber(e.target.value)} />
+      <button onClick={() => setDark(!dark)}>Toogle</button>
+    </div>
+  );
+};
+
+export default App;
+
+
+
+import React from "react";
+import StateHook from "./Component/Hooks/StateHook";
+import EffectHook from "./Component/Hooks/EffectHook";
+import RefHook from "./Component/Hooks/RefHook";
+
+const App = () => {
+  return (
+    <div>
+      <StateHook />
+      <EffectHook />
+      <RefHook/>
+    </div>
+  );
+};
+
+export default App;
+
+
+
+
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import SiginIn from "./Component/Dashboard/SignIn";
+import SignUp from "./Component/Dashboard/SignUp";
+import Dashboard from "./Component/Dashboard/Dashboard";
+import BasicTable from "./Component/Dashboard/BasicTable";
+import AddProduct from "./Component/Dashboard/AddProduct";
+import Flag from "./Component/Dashboard/Flag";
+import CustomTable from "./Component/Table/CustomTable";
+
+const App = () => {
+  return (
+    <div>
+      <Routes>
+        <Route path="/" element={<SiginIn />} />
+        <Route path="/signUp" element={<SignUp />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/table" element={<BasicTable />} />
+        <Route path="/addProduct" element={<AddProduct />} />
+        <Route path="/flag" element={<Flag />} />
+        <Route path="/custom" element={<CustomTable />} />
+      </Routes>
+    </div>
+  );
+};
+
+export default App;
+
+
+import React, { createContext, useContext, useReducer } from "react";
+import ToDoList from "./Component/TodoList/ToDoList";
+import { v4 as uuidv4 } from "uuid";
+// import GetApi from "./Component/Dashboard/GetApi";
+const todoInitialState = {
+  todos: [
+    { id: 1, text: "Playing" },
+    { id: 2, text: "Dancing" },
+    { id: 3, text: "Coding" },
+  ],
+};
+
+const todoReducer = (state , action) => {
+  switch (action.type) {
+    case "GET":
+      return { ...state, todos:action.payload };
+    case "ADD":
+      //add new Todo onto array
+      const addToDos = [...state.todos, action.payload];
+      return { ...state, todos: addToDos };
+
+    case "DELETE":
+      const filterTodoState = state.todos.filter(
+        (todo) => todo.id !== action.payload.id
+      );
+      return { ...state, todos: filterTodoState };
+
+    case "EDIT":
+      const updatedToDo = { ...action.payload };
+      const updateTodoIndex = state.todos.findIndex(
+        (t) => t.id === action.payload.id
+      );
+      const updateToDos = [
+        ...state.todos.slice(0, updateTodoIndex),
+        updatedToDo,
+        ...state.todos.slice(updateTodoIndex + 1),
+      ];
+      return { ...state, todos: updateToDos };
+
+    default:
+      return todoInitialState;
+  }
+};
+
+export const TodosContext = createContext();
+
+const App = () => {
+  const [state, dispatch] = useReducer(todoReducer, todoInitialState);
+  return (
+    <div>
+      <TodosContext.Provider value={{ state, dispatch }}>
+        <ToDoList />
+        {/* <GetApi/> */}
+      </TodosContext.Provider>
+    </div>
+  );
+};
+
+export default App;
+
+/**
+ *  <div>
+        {todoInitialState.todos.map((todo) => (
+          <ul key={todo.id}>
+            <li>{todo.text}</li>
+          </ul>
+        ))}
+      </div>
+ */
